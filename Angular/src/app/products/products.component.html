@@ -1,1 +1,5 @@
-<p>products works!</p>
+<ul class="list-group">
+    <li *ngFor='let c of categories ' class="list-group-item">
+       <a href="#"> {{c.category_name}}</a>
+    </li>
+</ul>
