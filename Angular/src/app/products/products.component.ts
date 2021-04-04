@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../shared/category.service';
 import {HttpClient} from '@angular/common/http';
+import { ProductService } from '../shared/product.service';
 
 @Component({
   selector: 'products',
@@ -9,15 +10,21 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProductsComponent implements OnInit {
   categories:any=[]
-  constructor(private service:CategoryService) { }
+  products:any=[]
+  constructor(private categoryservice:CategoryService, private productservice : ProductService) { }
 
   ngOnInit(): void {
     this.getCategory();
   }
 
   getCategory(){
-    this.service.getAll().subscribe( data=>{
+    this.categoryservice.getAll().subscribe( data=>{
         this.categories = data;
       });
+
+      this.productservice.getAll().subscribe( data=>{
+        this.products = data;
+      });
+    
   }
 }

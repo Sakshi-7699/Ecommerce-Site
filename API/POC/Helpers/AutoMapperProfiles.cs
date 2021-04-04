@@ -16,10 +16,7 @@ namespace POC.Helpers
 
             CreateMap<UsersCreationDTO, Users>();
 
-            CreateMap<ProductDetails, ProductDetailsDTO>().ReverseMap();
-
-            CreateMap<Products, ProductsDTO>().ReverseMap();
-
+           
             CreateMap<Orders, OrdersDTO>().ReverseMap();
 
             CreateMap<OrderItem, OrderItemDTO>().ReverseMap();

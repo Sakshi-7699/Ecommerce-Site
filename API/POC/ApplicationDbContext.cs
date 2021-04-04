@@ -20,9 +20,9 @@ namespace POC
         public DbSet<Discount> Discount { get; set; }
         public DbSet<OrderItem> OrderItem { get; set; }
         public DbSet<Orders> Orders { get; set; }
-        public DbSet<ProductDetails> ProductDetails { get; set; }
-        public DbSet<Products> Products { get; set; }
+      
 
         public DbSet<Images> Images { get; set; }
+        public DbSet<Product> Product { get; set; }
     }
 }

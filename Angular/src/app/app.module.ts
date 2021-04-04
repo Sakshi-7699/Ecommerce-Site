@@ -10,6 +10,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductsComponent } from './products/products.component';
 import { CategoryService } from './shared/category.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './shared/product.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CategoryService],
+  providers: [
+    CategoryService,
+    ProductService
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
