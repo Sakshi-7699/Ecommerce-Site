@@ -12,5 +12,7 @@ namespace POC.Entities
         public string product_name { get; set; }
         [Required]
         public string imageurl { get; set; }
+        [Required]
+        public int amount { get; set; }
     }
 }

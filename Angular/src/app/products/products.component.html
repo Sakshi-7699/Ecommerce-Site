@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-4">
+    <div class="col-3">
         <ul class="list-group">
             <li *ngFor='let c of categories ' class="list-group-item">
                <a href="#"> {{c.category_name}}</a>
@@ -7,26 +7,25 @@
         </ul>
     </div>
 
-    <div class="col-8">
-       <div class="row">
-           <ng-container *ngFor='let p of products; let i=index'>
-               <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img class="card-img-top" src="{{p.imageurl}}" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">{{p.product_name}}</h5>
-                      <p class="card-text"></p>
-                      <a href="#" class="btn btn-primary">Add to Cart</a>
+    <div class="col">
+        <div class="row">
+            <ng-container *ngFor='let p of products; let i=index'>
+                <div class="col">
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" [src]="p.imageurl" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">{{p.product_name}}</h5>
+                        <p class="card-text">{{p.amount}}</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
                     </div>
-                </div>
-               </div>
-               <div *ngIf="(i+1)%2==0" class="w-100"></div>
-           </ng-container>
-       </div>
+                </div>              
+                     
+            <div *ngIf="(i+1)%2 === 0" class="w-100"></div>
+        </ng-container>  
+        </div>
     </div>
 </div>
-
-
 
 
 
