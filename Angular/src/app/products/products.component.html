@@ -1,37 +1,13 @@
 <div class="row">
     <div class="col-3">
-        
-        <div class="list-group">
-           <a  class="list-group-item  list-group-item-action"
-           [class.active]="!category"
-           routerLink='/'
-           >All Categories</a>
-
-            <a 
-                *ngFor="let c of categories"
-                routerLink='/'
-                [queryParams]="{category: c.category_id}"
-                class="list-group-item list-group-item-action"
-                [class.active]="category===c.category_id"
-                >
-                
-                {{c.category_name}}
-            </a>
-        </div>
+        <product-filter [category]='category'></product-filter>       
     </div>
 
     <div class="col">
         <div class="row">
             <ng-container *ngFor='let p of filterProducts; let i=index'>
                 <div class="col">
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" [src]="p.imageurl" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title">{{p.product_name}}</h5>
-                        <p class="card-text">{{p.amount}}</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                        </div>
-                    </div>
+                    <product-card [product]='p'></product-card>
                 </div>              
                      
             <div *ngIf="(i+1)%2 === 0" class="w-100"></div>

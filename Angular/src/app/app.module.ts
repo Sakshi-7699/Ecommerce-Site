@@ -11,6 +11,8 @@ import { ProductsComponent } from './products/products.component';
 import { CategoryService } from './shared/category.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './shared/product.service';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ProductService } from './shared/product.service';
     HomeComponent,
     LoginComponent,
     ShoppingCartComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
