@@ -14,5 +14,7 @@ namespace POC.Entities
         public string imageurl { get; set; }
         [Required]
         public int amount { get; set; }
+        [Required]
+        public int category_id { get; set; }
     }
 }

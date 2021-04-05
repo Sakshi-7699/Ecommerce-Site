@@ -1,15 +1,28 @@
 <div class="row">
     <div class="col-3">
-        <ul class="list-group">
-            <li *ngFor='let c of categories ' class="list-group-item">
-               <a href="#"> {{c.category_name}}</a>
-            </li>
-        </ul>
+        
+        <div class="list-group">
+           <a  class="list-group-item  list-group-item-action"
+           [class.active]="!category"
+           routerLink='/'
+           >All Categories</a>
+
+            <a 
+                *ngFor="let c of categories"
+                routerLink='/'
+                [queryParams]="{category: c.category_id}"
+                class="list-group-item list-group-item-action"
+                [class.active]="category===c.category_id"
+                >
+                
+                {{c.category_name}}
+            </a>
+        </div>
     </div>
 
     <div class="col">
         <div class="row">
-            <ng-container *ngFor='let p of products; let i=index'>
+            <ng-container *ngFor='let p of filterProducts; let i=index'>
                 <div class="col">
                     <div class="card" style="width: 20rem;">
                         <img class="card-img-top" [src]="p.imageurl" alt="Card image cap">
