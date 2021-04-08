@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './shared/product.service';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartService } from './shared/shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
   ],
   providers: [
     CategoryService,
-    ProductService
-  
+    ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })

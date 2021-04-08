@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Cart } from '../model/Cart/cart.model';
+import { ShoppingCartService } from '../shared/shopping-cart.service';
 
 @Component({
   selector: 'product-card',
@@ -7,9 +9,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductCardComponent  {
   @Input('product') product:any=[]
-  constructor() { }
+
+  constructor(private cartservice : ShoppingCartService) { }
 
   ngOnInit(): void {
+  }
+
+  addToCart(product : any){
+    console.log('Product card component addtocart called');
+    this.cartservice.addToCart(product);
+  }
+
+  getQuantity(){
+    return 0;
   }
 
 }

@@ -32,7 +32,7 @@ namespace POC
 
             //services.AddTransient<IFileStorageService, AzureStorageService>();
             //services.AddTransient<IHostedService, MovieInTheatersService>();
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(); ;
 
             services.AddSwaggerGen(config =>
             {

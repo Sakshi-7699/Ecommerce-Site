@@ -55,7 +55,7 @@ namespace POC.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromForm] UsersCreationDTO personCreationDTO)
+        public async Task<ActionResult> Post([FromForm] UsersDTO personCreationDTO)
         {
             var person = mapper.Map<Users>(personCreationDTO);
                         

@@ -368,3 +368,6 @@ C:\Users\Anjali\source\Ecommerce-Site\API\POC\obj\Debug\netcoreapp3.1\POC.csproj
 C:\Users\Anjali\source\Ecommerce-Site\API\POC\obj\Debug\netcoreapp3.1\POC.dll
 C:\Users\Anjali\source\Ecommerce-Site\API\POC\obj\Debug\netcoreapp3.1\POC.pdb
 C:\Users\Anjali\source\Ecommerce-Site\API\POC\obj\Debug\netcoreapp3.1\POC.genruntimeconfig.cache
+C:\Users\Anjali\source\Ecommerce-Site\API\POC\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Anjali\source\Ecommerce-Site\API\POC\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Anjali\source\Ecommerce-Site\API\POC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
