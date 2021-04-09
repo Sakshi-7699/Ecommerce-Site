@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SocialAuthService  } from 'angularx-social-login';
-import { SocialUser } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
+import { AuthService } from '../shared/auth.service';
 
 
 @Component({
@@ -10,19 +8,15 @@ import { GoogleLoginProvider } from 'angularx-social-login';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  user : SocialUser;
-
-  constructor(private authService: SocialAuthService) { 
-    authService.authState.subscribe(user=>{
-      this.user = user;
-    })
+  
+  constructor(public authservice: AuthService) {   
   }
 
   ngOnInit(): void {
   }
 
   signOut(): void {
-    this.authService.signOut();
+   this.authservice.signOut();
   }  
   
 }

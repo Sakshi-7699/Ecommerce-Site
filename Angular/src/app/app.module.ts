@@ -19,6 +19,9 @@ import { ShoppingCartService } from './shared/shopping-cart.service';
 
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
+import { AuthService } from './shared/auth.service';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { AuthGuardService } from './shared/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     ShoppingCartComponent,
     ProductsComponent,
     ProductFilterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CheckOutComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     },
     CategoryService,
     ProductService,
-    ShoppingCartService
+    ShoppingCartService,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
