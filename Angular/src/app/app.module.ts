@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,9 @@ import { ProductFilterComponent } from './products/product-filter/product-filter
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ShoppingCartService } from './shared/shopping-cart.service';
 
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +34,26 @@ import { ShoppingCartService } from './shared/shopping-cart.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule,
+    NgbModule
   ],
   providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              // replace this with your google client id			
+              '425874635785-9qbseena0h69r9f6jbe7o84qpfjk6krr.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    },
     CategoryService,
     ProductService,
     ShoppingCartService
