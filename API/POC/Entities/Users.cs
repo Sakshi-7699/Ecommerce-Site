@@ -8,10 +8,9 @@ namespace POC.Entities
     public class Users
     {
         [Key]
-        public int user_id { get; set; }
-        [Required]
-        public string email { get; set; }        
-        public string pwd { get; set; }
+        public string email { get; set; }
+        [Required]             
+        public string name { get; set; }
 
         
     }

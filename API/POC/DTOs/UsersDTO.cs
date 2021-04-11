@@ -7,10 +7,8 @@ namespace POC.DTOs
 {
     public class UsersDTO
     {
-        [Key]
-        public int user_id { get; set; }
-        [Required]
-        public string email { get; set; }
-        public string pwd { get; set; }
+        
+        public string email { get; set; }       
+        public string name { get; set; }
     }
 }

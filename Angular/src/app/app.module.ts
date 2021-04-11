@@ -22,6 +22,7 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 import { AuthService } from './shared/auth.service';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { AuthGuardService } from './shared/auth-guard.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AuthGuardService } from './shared/auth-guard.service';
     ProductsComponent,
     ProductFilterComponent,
     ProductCardComponent,
-    CheckOutComponent
+    CheckOutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
