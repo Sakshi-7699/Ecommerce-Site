@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using POC.DTOs;
 using POC.Entities;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 
@@ -51,10 +52,22 @@ namespace POC.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody]Cart personCreationDTO)
+        public async Task<ActionResult> Post([FromBody] CartCreationDTO personCreationDTO)
         {
             var person = mapper.Map<Cart>(personCreationDTO);
             context.Add(person);
+            await context.SaveChangesAsync();
+            var personDTO = mapper.Map<Cart>(person);
+            return new CreatedAtRouteResult("getCart", new { id = person.cart_id }, personDTO);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Put( [FromBody] Cart personCreationDTO)
+        {
+            
+            var person =await context.Cart.FirstOrDefaultAsync(x => x.cart_id == personCreationDTO.cart_id );
+            //person.items<> += 1;
+            
             await context.SaveChangesAsync();
             var personDTO = mapper.Map<Cart>(person);
             return new CreatedAtRouteResult("getCart", new { id = person.cart_id }, personDTO);
@@ -74,5 +87,7 @@ namespace POC.Controllers
 
             return NoContent();
         }
+
+       
     }
 }

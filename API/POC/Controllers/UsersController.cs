@@ -20,15 +20,15 @@ namespace POC.Controllers
 
     public class UsersController : ControllerBase
     {
-        private readonly ILogger<UsersController> logger;
+        
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
 
-        public UsersController(ILogger<UsersController> logger,
+        public UsersController(
             ApplicationDbContext context,
             IMapper mapper, IConfiguration configuration)
         {
-            this.logger = logger;
+           
             this.context = context;
             this.mapper = mapper;
             _jwtGenerator = new JwtGenerator(configuration.GetValue<string>("JwtPrivateSigningKey"));

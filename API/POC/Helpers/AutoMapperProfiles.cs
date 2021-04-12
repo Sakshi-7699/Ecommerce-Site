@@ -13,23 +13,10 @@ namespace POC.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<Users, UsersDTO>().ReverseMap();
-
-            CreateMap<UsersCreationDTO, Users>();
-
-           
-            CreateMap<Orders, OrdersDTO>().ReverseMap();
-
-            CreateMap<OrderItem, OrderItemDTO>().ReverseMap();
-
-            CreateMap<Discount, DiscountDTO>().ReverseMap();
-
+            
             CreateMap<Categories, CategoriesDTO>().ReverseMap();
 
-            CreateMap<Cart, CartDTO>().ReverseMap();
-
-            CreateMap<Address, AddressDTO>().ReverseMap();
-
-
+            CreateMap<Cart, CartCreationDTO>().ReverseMap();
         }
 
        

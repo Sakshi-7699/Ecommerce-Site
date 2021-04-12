@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Cart } from '../model/Cart/cart.model';
+import { Product } from '../model/Product/product.model';
 import { ShoppingCartService } from '../shared/shopping-cart.service';
 
 @Component({
@@ -15,13 +16,17 @@ export class ProductCardComponent  {
   ngOnInit(): void {
   }
 
-  addToCart(product : any){
-    console.log('Product card component addtocart called');
+  addToCart(product : Product){    
     this.cartservice.addToCart(product);
   }
 
-  getQuantity(){
+  getQuantity(product : Product){
+    this.cartservice.getQuantity(product).subscribe(
+       val => {console.log(val)}
+    )
     return 0;
   }
+
+  
 
 }

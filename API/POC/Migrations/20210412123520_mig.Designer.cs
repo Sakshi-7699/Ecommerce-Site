@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using POC;
 
 namespace POC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210412123520_mig")]
+    partial class mig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,21 +36,7 @@ namespace POC.Migrations
                     b.ToTable("Cart");
                 });
 
-            modelBuilder.Entity("POC.Entities.Categories", b =>
-                {
-                    b.Property<int>("category_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("category_name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("category_id");
-
-                    b.ToTable("Categories");
-                });
+            
 
             modelBuilder.Entity("POC.Entities.Item", b =>
                 {
@@ -73,45 +61,9 @@ namespace POC.Migrations
                     b.ToTable("Item");
                 });
 
-            modelBuilder.Entity("POC.Entities.Product", b =>
-                {
-                    b.Property<int>("product_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+           
 
-                    b.Property<int>("amount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("category_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("imageurl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("product_name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("product_id");
-
-                    b.ToTable("Product");
-                });
-
-            modelBuilder.Entity("POC.Entities.Users", b =>
-                {
-                    b.Property<string>("email")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("email");
-
-                    b.ToTable("Users");
-                });
+           
 
             modelBuilder.Entity("POC.Entities.Item", b =>
                 {

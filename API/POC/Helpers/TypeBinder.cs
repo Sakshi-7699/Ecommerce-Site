@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using POC.Entities;
 namespace POC.Helpers
 {
     public class TypeBinder<T> : IModelBinder

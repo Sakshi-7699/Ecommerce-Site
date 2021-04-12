@@ -16,6 +16,9 @@ import { ProductService } from './shared/product.service';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ShoppingCartService } from './shared/shopping-cart.service';
+import { UserService } from './shared/user.service'
+
+
 
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
@@ -43,6 +46,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule,
     SocialLoginModule,
     NgbModule
+    
   ],
   providers: [
     {
@@ -64,7 +68,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProductService,
     ShoppingCartService,
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

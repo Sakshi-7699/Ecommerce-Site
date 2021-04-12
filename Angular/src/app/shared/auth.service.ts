@@ -19,6 +19,7 @@ export class AuthService {
 
   signInWithGoogle() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((x: any) => console.log(x));
+    
   }
 
   signOut() {
