@@ -20,10 +20,8 @@ export class ProductCardComponent  {
     this.cartservice.addToCart(product);
   }
 
-  getQuantity(product : Product){
-    this.cartservice.getQuantity(product).subscribe(
-       val => {console.log(val)}
-    )
+  getQuantity(){
+   
     return 0;
   }
 

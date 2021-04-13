@@ -17,7 +17,7 @@ namespace POC
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Item>().HasKey( x => new { x.cart_id});
+            modelBuilder.Entity<Item>().HasKey( x => new { x.cart_id,x.product_id});
             
             
             base.OnModelCreating(modelBuilder);

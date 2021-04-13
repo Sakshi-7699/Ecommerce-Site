@@ -61,16 +61,35 @@ namespace POC.Controllers
             return new CreatedAtRouteResult("getCart", new { id = person.cart_id }, personDTO);
         }
 
-        [HttpPut]
-        public async Task<ActionResult> Put( [FromBody] Cart personCreationDTO)
+        [HttpPut ("{id:int}")]
+        public async Task<ActionResult> Put( int id,[FromBody] Product product)
         {
             
-            var person =await context.Cart.FirstOrDefaultAsync(x => x.cart_id == personCreationDTO.cart_id );
-            //person.items<> += 1;
+            var cart = await context.Cart.FirstOrDefaultAsync(x => x.cart_id == id );
+            if (cart == null)
+            {
+                return NotFound();
+            }
+            var item = context.Item.Find(id, product.product_id);
+            if (item != null)
+            {
+                item.quantity += 1;
+                context.Update(item);
+            }
+            else
+            {
+                item = new Item();
+                item.cart_id = id;
+                item.quantity += 1;
+                item.product_id = product.product_id;
+                context.Item.Add(item);
+            }
             
+            
+                      
             await context.SaveChangesAsync();
-            var personDTO = mapper.Map<Cart>(person);
-            return new CreatedAtRouteResult("getCart", new { id = person.cart_id }, personDTO);
+            var personDTO = mapper.Map<Cart>(cart);
+            return new CreatedAtRouteResult("getCart", new { id = cart.cart_id }, personDTO);
         }
 
         [HttpDelete("{id}")]

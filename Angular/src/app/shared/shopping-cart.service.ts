@@ -50,8 +50,6 @@ export class ShoppingCartService {
     
   }
 
-  getQuantity(product : Product){
-    return this.http.get(this.rootUrl+'/cart');
-  }
+  
 
 }

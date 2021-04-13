@@ -10,11 +10,11 @@ namespace POC.Entities
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int cart_id { get; set; }        
+        public int cart_id { get; set; }
         public int user_id { get; set; }
 
-        [ModelBinder(BinderType = typeof(TypeBinder<List<Item>>))]
-        public List<Item> items { get; set; }
+        //[ModelBinder(BinderType = typeof(TypeBinder<List<Item>>))]
+        //public List<Item> items { get; set; }
 
     }
 }
