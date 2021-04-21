@@ -8,7 +8,7 @@ using POC.Entities;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
-
+using System.Linq;
 
 namespace POC.Controllers
 {
@@ -36,7 +36,7 @@ namespace POC.Controllers
             return UserDTOS;
         }
 
-        [HttpGet("{Id:int}", Name = "getCart")] // api/users/getUsers
+        [HttpGet("{Id:int}", Name = "getCart")] 
         public async Task<ActionResult<Cart>> Get(int Id)
         {
             var user = await context.Cart.FirstOrDefaultAsync(x => x.cart_id== Id);
@@ -50,7 +50,22 @@ namespace POC.Controllers
 
             return userDTO;
         }
+        
+        [HttpGet("{Id},{productId}",Name = "getQuantity")]
+        public async Task<ActionResult<Item>> GetQuantity(int Id, int productId)
+        {
+            var item = await context.Item.FirstOrDefaultAsync(x => x.cart_id == Id && x.product_id== productId);
 
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            var itemDTO = mapper.Map<Item>(item);
+
+            return itemDTO;
+        }
+        
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] CartCreationDTO personCreationDTO)
         {

@@ -10,21 +10,38 @@ import { ShoppingCartService } from '../shared/shopping-cart.service';
 })
 export class ProductCardComponent  {
   @Input('product') product:any=[]
+  @Input('item') item;
+
+  quantity : number;
+
 
   constructor(private cartservice : ShoppingCartService) { }
 
   ngOnInit(): void {
+    this.quantity = this.getQuantity();
   }
 
   addToCart(product : Product){    
     this.cartservice.addToCart(product);
   }
 
-  getQuantity(){
-   
-    return 0;
-  }
+  getQuantity() : number{
+    
+  this.cartservice.getQuantity(this.product).subscribe({
+      next: data=>{
+        console.log('quantity : ', data.quantity)
+       this.quantity =  data.quantity;
+       
+      },
+      error: error => {        
+        //console.error('There was an error!', error);
+        console.log('quantity',0)
+        this.quantity= 0
+    }
+    })
 
-  
+    return this.quantity
+    
+  }
 
 }
