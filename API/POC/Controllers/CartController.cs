@@ -77,7 +77,7 @@ namespace POC.Controllers
         }
 
         [HttpPut ("{id:int}")]
-        public async Task<ActionResult> Put( int id,[FromBody] Product product)
+        public async Task<ActionResult> Put( int id,[FromBody] Product product, string action)
         {
             
             var cart = await context.Cart.FirstOrDefaultAsync(x => x.cart_id == id );
@@ -85,21 +85,37 @@ namespace POC.Controllers
             {
                 return NotFound();
             }
-            var item = context.Item.Find(id, product.product_id);
-            if (item != null)
-            {
-                item.quantity += 1;
-                context.Update(item);
+            if (action.Equals("add")) {
+
+                var item = context.Item.Find(id, product.product_id);
+                if (item != null)
+                {
+                    item.quantity += 1;
+                    context.Update(item);
+                }
+                else
+                {
+                    item = new Item();
+                    item.cart_id = id;
+                    item.quantity += 1;
+                    item.product_id = product.product_id;
+                    context.Item.Add(item);
+                }
+
+
             }
-            else
-            {
-                item = new Item();
-                item.cart_id = id;
-                item.quantity += 1;
-                item.product_id = product.product_id;
-                context.Item.Add(item);
+            else {
+
+                var item = context.Item.Find(id, product.product_id);
+                if (item != null)
+                {
+                    item.quantity -= 1;
+                    context.Update(item);
+                }
+                
+
+
             }
-            
             
                       
             await context.SaveChangesAsync();

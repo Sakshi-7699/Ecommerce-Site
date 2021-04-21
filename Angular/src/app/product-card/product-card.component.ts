@@ -21,8 +21,12 @@ export class ProductCardComponent  {
     this.quantity = this.getQuantity();
   }
 
-  addToCart(product : Product){    
-    this.cartservice.addToCart(product);
+  addToCart(){    
+    this.cartservice.addToCart(this.product);
+  }
+
+  removeFromCart(){
+    this.cartservice.removeFromCart(this.product);
   }
 
   getQuantity() : number{

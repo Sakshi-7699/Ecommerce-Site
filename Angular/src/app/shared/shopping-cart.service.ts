@@ -42,14 +42,19 @@ export class ShoppingCartService {
     let cartId = await this.getOrCreateCart();    
     cartId = localStorage.getItem('cart_id');
     let reqHeaders = new HttpHeaders().set('Content-Type','application/json');
-    return this.http.put<Cart>(this.rootUrl+'/cart/'+cartId, product,{headers:reqHeaders}).subscribe();
-    
-   
+    return this.http.put<Cart>(this.rootUrl+'/cart/'+cartId+'?action=add', product,{headers:reqHeaders}).subscribe();
+       
+  }
+
+  async removeFromCart(product : Product){
+    let cartId = await this.getOrCreateCart();    
+    cartId = localStorage.getItem('cart_id');
+    let reqHeaders = new HttpHeaders().set('Content-Type','application/json');
+    return this.http.put<Cart>(this.rootUrl+'/cart/'+cartId+'?action=remove', product,{headers:reqHeaders}).subscribe();
   }
 
   getQuantity(product : Product){
-    let cartId = localStorage.getItem('cart_id');
-   
+    let cartId = localStorage.getItem('cart_id');   
     return this.http.get<Item>(this.rootUrl+'/cart/'+cartId+','+product.product_id);
   }
   
