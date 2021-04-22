@@ -13,6 +13,7 @@ export class ShoppingCartService {
 
   readonly rootUrl = 'http://localhost:22609/api';
   
+  
   constructor(private http : HttpClient) { }
   
 
@@ -58,5 +59,9 @@ export class ShoppingCartService {
     return this.http.get<Item>(this.rootUrl+'/cart/'+cartId+','+product.product_id);
   }
   
+  getTotalItems(){
+    let cartId = localStorage.getItem('cart_id');   
+    return this.http.get<Item>(this.rootUrl+'/Item/'+cartId)
+  }
 
 }

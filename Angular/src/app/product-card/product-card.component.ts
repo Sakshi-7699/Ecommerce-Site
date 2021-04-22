@@ -19,6 +19,7 @@ export class ProductCardComponent  {
 
   ngOnInit(): void {
     this.quantity = this.getQuantity();
+    
   }
 
   addToCart(){    
@@ -33,7 +34,7 @@ export class ProductCardComponent  {
     
   this.cartservice.getQuantity(this.product).subscribe({
       next: data=>{
-        console.log('quantity : ', data.quantity)
+       console.log('quantity : ', data.quantity)
        this.quantity =  data.quantity;
        
       },
@@ -43,7 +44,7 @@ export class ProductCardComponent  {
         this.quantity= 0
     }
     })
-
+   
     return this.quantity
     
   }

@@ -8,7 +8,12 @@
         </li>
 
         <li routerLinkActive="active current" class="nav-item">
-          <a class="nav-link" routerLink='/shopping-cart'>Shopping Cart</a>
+          <a class="nav-link" routerLink='/shopping-cart'>
+            Shopping Cart
+            <span class="badge badge-warning badge-pill">
+              {{shoppingCartItemCount}}
+            </span>
+          </a>
         </li>
         <ng-template #anonymousUser>
           <li  routerLinkActive="active current" class="nav-item">
@@ -22,9 +27,7 @@
               <div ngbDropdown class="d-inline-block">
                 <button class="btn " id="dropdownBasic1" ngbDropdownToggle>
                   {{user.name}}</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button ngbDropdownItem>Action - 1</button>
-                  <button ngbDropdownItem>Another Action</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">                  
                   <button ngbDropdownItem (click)="signOut()">Logout</button>
                 </div>
               </div>                  
