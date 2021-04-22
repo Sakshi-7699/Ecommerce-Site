@@ -64,4 +64,8 @@ export class ShoppingCartService {
     return this.http.get<Item>(this.rootUrl+'/Item/'+cartId)
   }
 
+  getAll(){
+    return this.http.get(this.rootUrl+'/Item')
+  }
+
 }

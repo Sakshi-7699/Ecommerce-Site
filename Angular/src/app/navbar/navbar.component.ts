@@ -21,8 +21,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     
-    this.getCartItems(); 
-    
+    this.getCartItems();    
     
   }
 
@@ -34,7 +33,7 @@ export class NavbarComponent implements OnInit {
         for(let item in this.shoppingCartItems){
           this.shoppingCartItemCount+=this.shoppingCartItems[item]['quantity']
         }
-        console.log('TOTAL ITEMS',this.shoppingCartItemCount)
+        //console.log('TOTAL ITEMS',this.shoppingCartItemCount)
         
       },
       error : error=>{
