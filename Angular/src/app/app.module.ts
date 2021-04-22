@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,7 @@ import { AuthService } from './shared/auth.service';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { AuthGuardService } from './shared/auth-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +39,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProductFilterComponent,
     ProductCardComponent,
     CheckOutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ShoppingCartSummaryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     SocialLoginModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
     
   ],
   providers: [
