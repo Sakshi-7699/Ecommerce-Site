@@ -38,22 +38,7 @@ namespace POC.Controllers
         [HttpGet]
         public IQueryable Get()
         {
-            var itemDetails = from i in context.Item
-                              select new
-                              {
-                                  i.cart_id,
-                                  i.product_id,
-                                  i.quantity,
-                                  product = from p in context.Product
-                                            where p.product_id == i.product_id
-                                            select new
-                                            {
-                                                p.product_name,
-                                                p.imageurl,
-                                                p.amount
-                                            }
-                              };
-
+            
             var query = from i in context.Item
                         join p in context.Product on i.product_id equals p.product_id
                         select new { i.cart_id, i.quantity, p.product_name, p.imageurl, p.amount };

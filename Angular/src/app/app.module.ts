@@ -27,6 +27,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { AuthGuardService } from './shared/auth-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-c
     ProductCardComponent,
     CheckOutComponent,
     PageNotFoundComponent,
-    ShoppingCartSummaryComponent
+    ShoppingCartSummaryComponent,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,

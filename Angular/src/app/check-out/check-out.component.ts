@@ -7,8 +7,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CheckOutComponent implements OnInit {
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+    name: new FormControl(''),
+    addrLine1: new FormControl(''),
+    addrLine2: new FormControl(''),
+    city: new FormControl('')  
   });
   
   constructor() { }
