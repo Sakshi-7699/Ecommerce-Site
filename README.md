@@ -14,26 +14,25 @@
 3. Frontend in Angular
 
 ## API Calls made : 
-![image](https://user-images.githubusercontent.com/50147978/115826356-65e3b100-a428-11eb-8dc2-5d53221e3a06.png)
-
+![image](https://user-images.githubusercontent.com/50147978/115827656-39c92f80-a42a-11eb-8f14-c8ae7bec3102.png)
 
 
 ## Site Pages
 ### 1. Home Page
-![image](https://user-images.githubusercontent.com/50147978/115826699-ef937e80-a428-11eb-8935-b1f291d39158.png)
+![image](https://user-images.githubusercontent.com/50147978/115827712-4f3e5980-a42a-11eb-8e5c-23f709a7e12f.png)
 
 #### 1.1 Filter Items based on category
-![image](https://user-images.githubusercontent.com/50147978/115826902-35504700-a429-11eb-8742-746b8cb86132.png)
+![image](https://user-images.githubusercontent.com/50147978/115827749-5b2a1b80-a42a-11eb-98b6-41d698b553ae.png)
 
 #### 1.2 Click on Add to Cart to Add item to cart and then toggle count with +/- buttons
-![image](https://user-images.githubusercontent.com/50147978/115826987-51ec7f00-a429-11eb-915e-83a32415b22a.png)
+![image](https://user-images.githubusercontent.com/50147978/115827775-641aed00-a42a-11eb-84c5-46cfc61ca8eb.png)
 
 ### 2. Shopping Cart
-![image](https://user-images.githubusercontent.com/50147978/115826676-e7d3da00-a428-11eb-848d-e0de38217e3a.png)
+![image](https://user-images.githubusercontent.com/50147978/115827789-6a10ce00-a42a-11eb-92a8-1dbf2e433166.png)
 
 ### 3. Check Out
-![image](https://user-images.githubusercontent.com/50147978/115826755-020db800-a429-11eb-90cf-ef72aaaa22d3.png)
+![image](https://user-images.githubusercontent.com/50147978/115827803-6da45500-a42a-11eb-9ce3-2015c80dfe82.png)
 
 ### 4. Login
-![image](https://user-images.githubusercontent.com/50147978/115826779-0afe8980-a429-11eb-9d2e-4259793b30b2.png)
+![image](https://user-images.githubusercontent.com/50147978/115827815-73019f80-a42a-11eb-8bd1-a4f1d5e047ea.png)
 
