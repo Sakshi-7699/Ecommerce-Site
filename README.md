@@ -14,7 +14,8 @@
 3. Frontend in Angular
 
 ## API Calls made : 
-![image](https://user-images.githubusercontent.com/50147978/115827656-39c92f80-a42a-11eb-8f14-c8ae7bec3102.png)
+![image](https://user-images.githubusercontent.com/50147978/115827920-9c223000-a42a-11eb-8052-4f053eb9fe82.png)
+![image](https://user-images.githubusercontent.com/50147978/115827941-a2b0a780-a42a-11eb-9b6a-a2f2fab6df8d.png)
 
 
 ## Site Pages
