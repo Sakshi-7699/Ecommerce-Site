@@ -37,3 +37,12 @@
 ### 4. Login
 ![image](https://user-images.githubusercontent.com/50147978/115827815-73019f80-a42a-11eb-8bd1-a4f1d5e047ea.png)
 
+#### 4.1 Logged In
+![image](https://user-images.githubusercontent.com/50147978/115840465-591b8900-a439-11eb-98a0-9a89301322bc.png)
+
+### 5. Order Success
+![image](https://user-images.githubusercontent.com/50147978/115840740-a13aab80-a439-11eb-827d-70568da74863.png)
+
+### 6. Page 404
+![image](https://user-images.githubusercontent.com/50147978/115840569-751f2a80-a439-11eb-9675-ea2da8685519.png)
+
