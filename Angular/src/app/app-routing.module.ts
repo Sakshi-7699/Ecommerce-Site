@@ -26,11 +26,13 @@ const routes: Routes = [
 
   { 
     path: 'check-out', 
+    canActivate: [AuthGuardService],
     component: CheckOutComponent,
     
   },
   { 
     path: 'order-success', 
+    canActivate: [AuthGuardService],
     component: OrderSuccessComponent,
     
   },

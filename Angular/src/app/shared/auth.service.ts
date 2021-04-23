@@ -19,6 +19,14 @@ export class AuthService {
 
   signInWithGoogle() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((x: any) => console.log(x));
+    this.user$.subscribe({
+      next : data=>{
+        localStorage.setItem('access_token',data.authToken);
+      },
+      error : error=>{
+        console.log(error)
+      }
+    })
     
   }
 
@@ -26,5 +34,13 @@ export class AuthService {
     this.authService.signOut();
   }  
 
+  isAuthenticated() {
+    let token = localStorage.getItem('access_token');
 
+    if (token) {
+        return true;
+    }
+
+    return false;
+  }
 }
