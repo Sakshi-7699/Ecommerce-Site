@@ -5,11 +5,11 @@
 #### Features :
 1. Home Page : filter products with category
 2. Shopping Cart : Review contents in the cart (add/remove items)
-3. Check out : View Order Summary and Add required details required for shipping.
+3. Check out : View Order Summary and Add required details for shipping.
 4. User Authentication : done via google
 
 #### Implemetation Details :
-1. database used : mssql
+1. Database used : mssql
 2. API created in C#
 3. Frontend in Angular
 
