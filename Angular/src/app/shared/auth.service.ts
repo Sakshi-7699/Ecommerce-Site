@@ -32,6 +32,7 @@ export class AuthService {
 
   signOut() {
     this.authService.signOut();
+    localStorage.removeItem('access_token')
   }  
 
   isAuthenticated() {
